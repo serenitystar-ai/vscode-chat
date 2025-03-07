@@ -14,6 +14,7 @@
     "AI",
     "Chat"
   ],
+  "publisher": "serenitystar-ai",
   "icon": "/media/icon.png",
   "galleryBanner": {
     "color": "#4862ff",
