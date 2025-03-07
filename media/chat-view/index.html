@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!--
+        Use a content security policy to only allow loading styles from our extension directory,
+        and only allow scripts that have a specific nonce.
+        (See the 'webview-sample' extension sample for img-src content security policy examples)
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; style-src {{cspSource}}; script-src 'nonce-{{nonce}}';"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script nonce="{{nonce}}" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script nonce="{{nonce}}" src="{{autosizeScriptUri}}"/></script>
+    <link href="{{styleVSCodeUri}}" rel="stylesheet" />
+    <link href="{{styleMainUri}}" rel="stylesheet" />
+    <link href="{{highlightStyleUri}}" rel="stylesheet" />
+
+    <title>Serenity* Star - Chat</title>
+  </head>
+  <body>
+    
+    <div id="chat-screen" class="hidden">
+      <section id="chat-header">
+        <h1 id="agent-name-header">Agent</h1>
+        <button id="new-chat" class="btn">New Chat</button>
+      </section>
+      <section id="chat-history">
+        <!-- Messages go here -->
+      </section>
+      <textarea disabled placeholder="Enter your message here..." id="user-message"></textarea>
+    </div>
+
+    <div id="setup-screen" class="hidden">
+      <button id="setup-serenity" class="btn">Setup Serenity</button>
+    </div>
+    <script nonce="{{nonce}}" src="{{stateManagerScriptUri}}"></script>
+    <script nonce="{{nonce}}" src="{{mainScriptUri}}"></script>
+  </body>
+</html>

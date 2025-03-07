@@ -1,9 +1,16 @@
 # Change Log
 
-All notable changes to the "serenity-star-ai" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+All notable changes to the "serenity-star-vscode" extension will be documented in this file.
 
 ## [Unreleased]
 
+## [1.0.0] - 2025-03-07
+
+### Added
+
 - Initial release
+
+- Chat view with multiple Serenity* Star agents.
+- You can switch between different agents using the "Switch Agent" command.
+- Allows you to start new conversations.
+

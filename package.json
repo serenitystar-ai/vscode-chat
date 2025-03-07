@@ -1,40 +1,122 @@
 {
-  "name": "serenity-star-ai",
-  "displayName": "serenity-star-ai",
-  "description": "Customizable AI assisted coding agents",
-  "version": "0.0.1",
+  "name": "@serenity-star/vscode-chat",
+  "displayName": "Serenity* Star",
+  "description": "Coding assistance using customizable agents from Serenity* Star",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serenitystar-ai/vscode-chat.git"
+  },
   "engines": {
     "vscode": "^1.94.0"
   },
   "categories": [
-    "Other"
+    "AI",
+    "Chat"
   ],
+  "icon": "/media/icon.png",
+  "galleryBanner": {
+    "color": "#4862ff",
+    "theme": "light"
+  },
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "serenity-star-ai.helloWorld",
-        "title": "Hello World"
+        "command": "SerenityStar.setup",
+        "title": "Setup",
+        "category": "Serenity* Star"
+      },
+      {
+        "command": "SerenityStar.switch-agent",
+        "title": "Switch Agent",
+        "category": "Serenity* Star"
+      },
+      {
+        "command": "SerenityStar.new-chat",
+        "title": "New Chat",
+        "category": "Serenity* Star"
+      },
+      {
+        "command": "SerenityStar.explain",
+        "title": "Explain selected code",
+        "category": "Serenity* Star",
+        "enablement": "editor.hasSelection"
       }
     ],
+    "submenus": [
+      {
+        "id": "SerenityStar.submenu",
+        "title": "Serenity* Star",
+        "label": "Serenity* Star"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "SerenityStar.explain"
+        }
+      ],
+      "editor/context": [
+        {
+          "submenu": "SerenityStar.submenu"
+        }
+      ],
+      "SerenityStar.submenu": [
+        {
+          "command": "SerenityStar.explain",
+          "when": "editor.hasSelection"
+        }
+      ]
+    },
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "serenity-star-ai_activityBar",
-          "title": "Serenity* AI",
-          "icon": "media/icons/activity-bar-icon.svg"
+          "id": "SerenityStar_activityBar",
+          "title": "Serenity* Star",
+          "icon": "media/activity-bar-icon.svg"
         }
       ]
     },
     "views": {
-      "serenity-star-ai_activityBar": [
+      "SerenityStar_activityBar": [
         {
           "type": "webview",
-          "id": "serenity-star-ai_chat-view",
+          "id": "SerenityStar.chat",
           "name": "Chat"
         }
       ]
+    },
+    "configuration": {
+      "title": "Serenity* Star",
+      "properties": {
+        "SerenityStar.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for Serenity* Star"
+        },
+        "SerenityStar.baseUrl": {
+          "type": "string",
+          "default": "https://api.serenitystar.ai",
+          "description": "Base URL for Serenity* Star API"
+        },
+        "SerenityStar.agents.default": {
+          "type": "string",
+          "default": "",
+          "description": "The agent to use in the chat unless another agent is specified"
+        },
+        "SerenityStar.agents.explainCommand": {
+          "type": "string",
+          "default": "",
+          "description": "The agent to use for the 'explain' command"
+        },
+        "SerenityStar.agents.active": {
+          "type": "string",
+          "default": "",
+          "description": "The active agent being used in the chat"
+        }
+      }
     }
   },
   "scripts": {
@@ -52,16 +134,21 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.94.0",
     "@types/mocha": "^10.0.8",
     "@types/node": "20.x",
+    "@types/vscode": "^1.94.0",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
-    "eslint": "^9.11.1",
-    "esbuild": "^0.24.0",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^5.6.2",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.11.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@types/highlight.js": "^10.1.0",
+    "@types/showdown": "^2.0.6",
+    "showdown": "^2.1.0"
   }
 }
