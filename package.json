@@ -2,7 +2,7 @@
   "name": "serenity-star-vscode-chat",
   "displayName": "Serenity* Star",
   "description": "Coding assistance using customizable agents from Serenity* Star",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/serenitystar-ai/vscode-chat.git"
@@ -17,7 +17,7 @@
   "publisher": "serenitystar-ai",
   "icon": "/media/icon.png",
   "galleryBanner": {
-    "color": "#4862ff",
+    "color": "#EFF1F3",
     "theme": "light"
   },
   "activationEvents": [],

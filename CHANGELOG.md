@@ -4,7 +4,7 @@ All notable changes to the "serenity-star-vscode-chat" extension will be documen
 
 ## [Unreleased]
 
-## [1.0.0] - 2025-03-07
+## [1.0.1] - 2025-03-07
 
 ### Added
 
