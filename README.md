@@ -1,3 +1,5 @@
+![Serenity* Star VSCode Chat](./media/vscode-chat-banner.png)
+
 Serenity* Star VSCode Extension - Code with the power of highly customizable AI Agents.
 
 ## Features
