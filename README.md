@@ -5,19 +5,15 @@ Serenity* Star VSCode Extension - Code with the power of highly customizable AI 
 ### Chat with your AI Agents
 Open the chat view at any time during your coding session to ask your AI agents for help.
 
-// TODO Gif
-
 ### Ask an agent to explain or review a block of code
 Quickly select a block of code and ask your AI agent to explain it or review it.
-
-// TODO Gif
 
 ## Requirements
 
 To use this extension, you need:
 
 * A Serenity* Star account
-* At least one agent created in your account
+* At least one [Assistant Agent](https://docs.serenitystar.ai/docs/serenity-aihub/agents/assistant-agent/) created in your account
 
 Sign up for free at [hub.serenitystar.ai](https://hub.serenitystar.ai)
 
