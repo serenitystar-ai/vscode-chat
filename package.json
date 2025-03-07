@@ -1,5 +1,5 @@
 {
-  "name": "@serenity-star/vscode-chat",
+  "name": "serenity-star-vscode-chat",
   "displayName": "Serenity* Star",
   "description": "Coding assistance using customizable agents from Serenity* Star",
   "version": "1.0.0",

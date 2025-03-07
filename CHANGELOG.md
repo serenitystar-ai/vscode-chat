@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "@serenity-star/vscode-chat" extension will be documented in this file.
+All notable changes to the "serenity-star-vscode-chat" extension will be documented in this file.
 
 ## [Unreleased]
 
